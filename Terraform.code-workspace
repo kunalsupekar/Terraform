@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../GCP_terraform"
+		},
+		{
+			"path": "../AWS_Project_terraform"
+		},
+		{
+			"path": "../terraform-ecs-deployment-stack"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,1 @@
+instance_name = "Terraform-EC2-Instance-dev"
