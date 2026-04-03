@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -11,4 +12,19 @@ resource "aws_instance" "this" {
   tags = {
     Name = var.instance_name
   }
+=======
+
+
+
+resource "aws_instance" "this" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  subnet_id     = var.subnet_id
+  vpc_security_group_ids = [var.sg_id]
+  key_name      = var.key_name
+    user_data     = file(var.user_data)
+  tags = {
+    Name = var.instance_name
+  }
+>>>>>>> 36a8481b87de96d119948751340ee3c1f89036b8
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr
@@ -40,3 +41,47 @@ resource "aws_route_table_association" "public-route-association" {
   route_table_id = aws_route_table.public-route.id
   
 }
+=======
+
+resource "aws_vpc" "main" {
+  cidr_block = var.vpc_cidr
+  tags = var.tags
+}
+
+
+
+resource "aws_subnet" "public" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.public_subnet_cidr
+  map_public_ip_on_launch =  true
+    tags={
+      ClientName=var.client_name
+    }
+}
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main.id
+  tags={
+    Name=var.igw_name
+  }
+}
+
+
+resource "aws_route_table" "public-route" {
+  vpc_id = aws_vpc.main.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+  tags =var.tags
+}
+
+
+
+resource "aws_route_table_association" "public-route-association" {
+  subnet_id      = aws_subnet.public.id
+  route_table_id = aws_route_table.public-route.id
+  
+}
+>>>>>>> 36a8481b87de96d119948751340ee3c1f89036b8

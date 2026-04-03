@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 variable "vpc_cidr" {
     type = string
     description = "CIDR for VPC"
@@ -20,4 +21,28 @@ variable "igw_name" {
 }
 variable "client_name" {
   
+=======
+variable "vpc_cidr" {
+    type = string
+    description = "CIDR for VPC"
+  
+}
+
+variable "public_subnet_cidr" {
+type = string
+description = "CIDR for public subnet"
+
+}
+
+variable "tags" {
+  type = map(string)
+
+}
+
+variable "igw_name" {
+  
+}
+variable "client_name" {
+  
+>>>>>>> 36a8481b87de96d119948751340ee3c1f89036b8
 }
